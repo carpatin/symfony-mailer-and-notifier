@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>You've got new feedback from your trainer</title>
+</head>
+<body style="font-family: Arial, Helvetica, sans-serif; color: #333; margin: 0; padding: 0;">
+<div style="max-width: 640px; margin: 0 auto; background: #ffffff;">
+    <div style="display: flex; padding: 6px;">
+        <img src="{{ email.image(paths.logo) }}" alt="Internship" style="flex: 1; max-width: 100px; max-height: 100px;">
+        <span style="flex: 1; margin-top: 26px; font-size: xx-large">PHP Internship 2025 @ Evozon</span>
+    </div>
+    <div style="background: #ffffff; text-align: center;">
+        <img src="cid:{{ cids.header }}" alt="Header" style="max-width: 100%; height: auto; border: 0;">
+    </div>
+    <div style="display: flex; background: #ffffff;">
+        <div style="flex: 1; text-align: center;">
+            <img src="{{ email.image(paths.main) }}" alt="Main Image" style="max-width: 100%; height: auto; border: 0;">
+        </div>
+        <div style="flex: 1; padding: 12px; line-height: 1.6;">
+            <h1>Hello {{ receiver }} 👋</h1>
+            <p>
+                Your trainer has added some feedback on your latest work for the ongoing project.
+            </p>
+            <p>
+                To check out the trainer's suggestions, please check the Issues tab on your GitHub project.
+            </p>
+            <p>
+                <a style="display: inline-block; background: #0b5fff; color: #fff; text-decoration: none; padding: 10px 16px; border-radius: 4px;"
+                   href="https://www.github.com">Go to Github</a>
+            </p>
+            <p>
+                If you have any questions, please reach out your trainer!
+            </p>
+        </div>
+    </div>
+    <div style="background: #ffffff; color: #666; font-size: 12px; text-align: center; padding: 16px;">
+        <img src="cid:{{ cids.footer }}" alt="Footer" style="max-width: 100%; height: auto; border: 0;">
+    </div>
+</div>
+</body>
+</html>
