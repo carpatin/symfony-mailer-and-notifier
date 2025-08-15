@@ -1,3 +1,7 @@
 framework:
     mailer:
         dsn: '%env(MAILER_DSN)%'
+        smime_signer:
+            key: '%kernel.project_dir%/keys/smime.key'
+            certificate: '%kernel.project_dir%/keys/smime.crt'
+            passphrase: ''

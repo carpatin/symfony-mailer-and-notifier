@@ -1,0 +1,3 @@
+# Symfony install
+
+The content goes here ...

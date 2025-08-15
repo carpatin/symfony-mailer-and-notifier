@@ -1,0 +1,3 @@
+# Symfony Mailer
+
+This is exactly the chapter this demo is about...
