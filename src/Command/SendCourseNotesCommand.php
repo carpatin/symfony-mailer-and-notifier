@@ -69,9 +69,14 @@ class SendCourseNotesCommand extends Command
                 ->htmlTemplate('email/course_notes.html.twig')
                 ->context([
                     'chapters' => $chapters,
-                    'paths'    => $this->resolveImagePaths(),
                 ]);
 
+            // Embed body images inline (CID) to the email
+            foreach ($this->provideEmbeddedImages() as $imageIdentifier => $absolutePath) {
+                $email->embedFromPath($absolutePath, $imageIdentifier.'.png', 'image/png');
+            }
+
+            // Attach course chapters to the email
             foreach ($this->provideAttachmentsPaths($chapters) as $attachment) {
                 $email->attachFromPath($attachment);
             }
@@ -104,24 +109,23 @@ class SendCourseNotesCommand extends Command
         return Command::SUCCESS;
     }
 
-    private function resolveImagePaths(): array
+    private function provideEmbeddedImages(): array
     {
         $assetsBase = $this->projectDir.'/assets/images';
-        $logoImage = 'logo.jpg';
-        $headerImage = 'email/header.png';
-        $footerImage = 'email/footer.png';
+        $logoImage = $assetsBase.'/logo.png';
+        $headerImage = $assetsBase.'/email/header.png';
+        $footerImage = $assetsBase.'/email/footer.png';
 
-        $pathsToValidate = [$assetsBase.'/'.$logoImage, $assetsBase.'/'.$headerImage, $assetsBase.'/'.$footerImage];
-        foreach ($pathsToValidate as $file) {
+        foreach ([$logoImage, $headerImage, $footerImage] as $file) {
             if (!is_file($file)) {
                 throw new RuntimeException(sprintf('File "%s" not found', $file));
             }
         }
 
         return [
-            'logo'   => '@images/'.$logoImage,
-            'header' => '@images/'.$headerImage,
-            'footer' => '@images/'.$footerImage,
+            'logo'   => $logoImage,
+            'header' => $headerImage,
+            'footer' => $footerImage,
         ];
     }
 
