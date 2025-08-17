@@ -23,6 +23,7 @@
         "symfony/notifier": "7.3.*",
         "symfony/runtime": "7.3.*",
         "symfony/twig-bundle": "7.3.*",
+        "symfony/twilio-notifier": "7.3.*",
         "symfony/yaml": "7.3.*"
     },
     "config": {
