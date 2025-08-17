@@ -10,8 +10,10 @@ framework:
             # sync: 'sync://'
 
         routing:
-            # Route your messages to the transports
+            # For sending mails asynchronously
             'Symfony\Component\Mailer\Messenger\SendEmailMessage': async
+            # For scheduling "send SMS" messages for later
+            'App\Message\NotifyScheduledCourseMessage': async
 
 # when@test:
 #    framework:

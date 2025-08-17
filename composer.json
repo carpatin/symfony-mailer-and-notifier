@@ -11,6 +11,7 @@
         "doctrine/doctrine-bundle": "^2.15",
         "doctrine/doctrine-migrations-bundle": "^3.4",
         "doctrine/orm": "^3.5",
+        "dragonmantank/cron-expression": "^3.4",
         "league/html-to-markdown": "^5.1",
         "symfony/console": "7.3.*",
         "symfony/doctrine-messenger": "7.3.*",
@@ -20,8 +21,10 @@
         "symfony/google-mailer": "7.3.*",
         "symfony/mailer": "7.3.*",
         "symfony/messenger": "7.3.*",
+        "symfony/monolog-bundle": "^3.10",
         "symfony/notifier": "7.3.*",
         "symfony/runtime": "7.3.*",
+        "symfony/scheduler": "7.3.*",
         "symfony/twig-bundle": "7.3.*",
         "symfony/twilio-notifier": "7.3.*",
         "symfony/yaml": "7.3.*"
